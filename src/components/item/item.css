@@ -1,0 +1,102 @@
+.cartItem{
+     min-height:30vh;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    position: relative;
+   z-index:1;
+margin-top: 10px;
+border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.cartItem img {
+    width: 200px;
+    height: 180px;
+    object-fit: contain;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 10px;
+    padding:5px;
+    margin-bottom: 10px;
+}
+
+.details{
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    flex:3;
+    margin-left: 20px;
+}
+
+.details h5{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color:orangered;
+}
+
+.details h2{
+visibility: hidden;
+}
+
+.details p{
+    margin-left: 5px;
+}
+
+.quantity {
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.quantity button {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid orangered;
+    color: orangered;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.quantity button:hover{
+    background-color: orangered;
+    color:#fff;
+}
+
+.amountp,
+.amountm{
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.delete{
+   width: 20%;
+   background-color: transparent;
+   color: red;
+   height: 30px;
+   width: 50px;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+transition: all 0.3s ease;
+display:none;
+}
+
+.delete:hover{
+    background-color: red;
+    color: #fff;
+}
+
+.visible{
+    display: block;
+}

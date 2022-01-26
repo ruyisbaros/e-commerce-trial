@@ -1,0 +1,93 @@
+.register{
+        width: 90vw;
+        height: 80vh;
+        margin: 30px auto;
+        
+        background-image: url('https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+        display: flex;
+        
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    .wrapper{
+        background-image: url('https://images.pexels.com/photos/336372/pexels-photo-336372.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+       width: 50%;
+      /*  height: 50%; */
+       padding: 20px;
+       background-color: #e3e3e3;
+       display: flex;
+       flex-wrap: wrap;
+      border-radius: 5px;
+      box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.2);
+       
+       h1{
+          width: 50%;
+          margin: 0 auto;
+          margin-bottom: 20px;
+       }
+        form{
+            display: flex;
+         flex-direction: column;
+         align-items: center;
+
+          input{
+              flex:1;
+              width: 50%;
+              margin-bottom: 10px;
+              padding: 5px 10px;
+              border-radius: 5px;
+              border: 1px solid grey;
+              outline: none;
+             background-color: transparent;
+             color: #fff;
+            
+            &::-webkit-input-placeholder{
+                 color: #fff;
+                 opacity: 0.7;
+             }
+          }
+
+          .agreementBox{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin:20px 0;
+             
+
+              .chk{
+                  flex:1;
+                  display: block;
+                  width: 15px ;
+                  height: 15px;
+                  margin-right: 10px;
+                  padding:5px;
+                  cursor: pointer;
+              }
+              .agreement{
+                  flex: 4;
+                  margin-left: -50px;
+                  color: #fff;
+              }
+          }
+          button{
+              width: 30%;
+              padding:5px 0px;
+              border-radius: 5px;
+               box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+              border: none;
+              background-color: teal;
+              color: #fff;
+              font-weight: bold;
+              text-transform: uppercase;
+              cursor: pointer;
+          }
+        }
+    }
+    
+}

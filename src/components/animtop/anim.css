@@ -1,0 +1,17 @@
+.anim{
+    width: 100%;
+    height: 50px;
+    background-color: red;
+    
+}
+.anim h1{
+animation: stream 5s linear infinite;
+color:yellow;
+}
+
+@keyframes stream {
+    to{
+        transform: translateX(100%);
+    }
+}
+

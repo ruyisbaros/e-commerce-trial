@@ -1,0 +1,22 @@
+.container{
+width: 100%;
+min-height: 100vh;
+padding:20px;
+
+    .main{
+    width: 90vw;
+    min-height: 100vh;
+    margin:auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+    .itemList{
+        flex:8;
+    }
+
+}
+
+
+

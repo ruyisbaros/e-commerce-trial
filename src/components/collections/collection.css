@@ -1,0 +1,118 @@
+/* position: relative;
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,
+            rgba($color-primary-light, 0.8),
+            rgba($color-primary-dark, 0.8)),
+        url(/img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 95vh); */
+.collection{
+    width: 90vw;
+    height: 600px;
+    margin: 20px auto;
+  /*   background-color: yellow; */
+  background-image: url('https://images.pexels.com/photos/4210866/pexels-photo-4210866.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+ object-fit: cover;
+  display: flex;
+  overflow: hidden;
+}
+
+
+
+.collection img{
+width: 100%;
+object-fit: cover;
+transition: all 1s;
+}
+.collection h1{
+    font-size: 60px;
+    text-transform: uppercase;
+}
+.collection h3{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: lighter;
+}
+.collection .view{
+    text-transform: uppercase;
+    background-color: #000;
+    color:#fff;
+    padding: 7px 5px;
+    border:none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+.foto1,
+.foto2,
+.foto3{
+    flex: 1;
+    position: relative;
+}
+
+.foto1 img{
+   
+    object-fit: cover;
+     clip-path: polygon(0 0, 100% 0, 75% 600px, 0 600px);
+     position: relative;
+     cursor: pointer;
+}
+
+
+ 
+.foto2 img{
+    
+      object-fit: cover;
+     clip-path: polygon(0 0, 100% 0, 75% 600px, 25% 600px);
+     position: relative;
+      cursor: pointer;
+}
+ 
+.foto3 img{
+    
+      object-fit: cover;
+     clip-path: polygon(0 0, 100% 0, 100% 600px, 25% 600px);
+         position: relative;
+          cursor: pointer;
+}
+
+.info {
+    position: absolute;
+    left: 40%;
+    top: 40px;
+    transform:translateY(-150%);
+    transition: all 0.6s ease-in;
+}
+
+.foto1:hover .colInfo1{
+    transform: translateY(0)
+}
+.foto1:hover img{
+     object-fit: cover;
+     clip-path: polygon(0 0, 100% 0, 100% 600px, 0 600px);
+     position: relative;
+     cursor: pointer;
+}
+
+.foto2:hover .colInfo2{
+    transform: translateY(0)
+}
+.foto2:hover img{
+     object-fit: cover;
+     clip-path: polygon(0 0, 100% 0, 100% 600px, 0 600px);
+     position: relative;
+     cursor: pointer;
+}
+ 
+.foto3:hover .colInfo3{
+    transform: translateY(0)
+}
+.foto3:hover img{
+     object-fit: cover;
+     clip-path: polygon(0 0, 100% 0, 100% 600px, 0 600px);
+     position: relative;
+     cursor: pointer;
+}
