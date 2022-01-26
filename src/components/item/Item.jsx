@@ -1,35 +1,29 @@
-import './item.css'
+import './item.scss'
 import { useGlobalContext } from '../../contex'
 
-const Item = ({ id, category, description, image, price, title, rating: { rate, count } }) => {
+const Item = ({ id, category, description, image, price, title }) => {
 
-    const { piece, setPiece, handleButtonP, handleButtonM } = useGlobalContext()
+    const { setBasket, addBasket } = useGlobalContext()
 
     return <div id={id} className="cartItem">
         <img src={image} alt={title} />
         <div className="details">
             <h4>{title}</h4>
             <h6>{category}</h6>
-            <h5>{price} </h5>
-            <span>EUR</span>
-            <h2>{price}</h2>
-            <button className="delete">delete</button>
+            <span>
+                <h5>{price} </h5>
+                <span>€</span>
+            </span>
+
         </div>
-        <div className="quantity">
+        <div className="shop">
             <button onClick={() => {
-                handleButtonP(id);
-                setPiece(piece + 1)
-            }} className="plus">
-                +
-            </button>
-            <p className="amountp">0</p>
-            <button onClick={() => {
-                handleButtonM(id);
-                setPiece(piece - 1)
-            }} className="minus">
-                -
-            </button>
-            <p className="amountm">0</p>
+                setBasket(prev => prev + 1);
+                addBasket(id)
+            }} className="add_basket">Add Basket</button>
+
+            <button className="buy_it">Buy</button>
+
         </div>
     </div>;
 };

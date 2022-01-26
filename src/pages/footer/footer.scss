@@ -2,13 +2,15 @@
 
 .footer{
     width: 100vw;
-    margin:20px auto;
+    height: 220px;
+   
+    margin-bottom: 0;
     border-radius: 4px;
-padding:10px;
-background-color: #34363a;
-display: flex;
-align-items: center;
-justify-content:space-between;
+    padding:10px;
+    background-color: #34363a;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
 
     .left{
         flex: 1;
@@ -18,7 +20,7 @@ justify-content:space-between;
         .logo{
             font-family: 'Lobster', cursive;
             font-size: 50px;
-            color: blue;
+            color: #34568b;
             }
         p{
             margin: 5px 0;

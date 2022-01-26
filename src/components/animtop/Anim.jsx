@@ -1,4 +1,4 @@
-import './anim.css';
+import './anim.scss';
 
 const Anim = () => {
     return <div className="anim">
