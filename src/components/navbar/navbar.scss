@@ -48,6 +48,7 @@
     border:none;
     padding:0 10px;
     outline:none;
+    color:#000;
 }
 
 .navRight{
@@ -62,8 +63,19 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+
+    
 }
 
 .menuItem h2{
     margin-right: 10px;
+}
+
+.welcome{
+  font-weight: 500;
+  font-style: italic;
+}
+
+.welcome span{
+  color: #4d32c6;
 }

@@ -1,4 +1,14 @@
 import { createContext, useEffect, useState, useContext } from "react";
+import { userList } from "./utils/users";
+
+
+/* 
+ const {name, password,username,lname,email}=loginUser;
+            setOnlineUser(prev=>{
+                return {...prev,...loginUser}
+                
+            })
+*/
 
 const AppContext = createContext();
 
@@ -11,7 +21,10 @@ const AppProvider = ({ children }) => {
     const [quantity, setQuantity] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
     const [online, setOnline] = useState(false);
-    const [aciveUser, setAciveUser] = useState('')
+    const [activeUsername, setActiveUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [onlineUser, setOnlineUser] = useState('');
+    const [fail, setFail] = useState(false);
 
     const fetchData = async () => {
         const result = await fetch('https://fakestoreapi.com/products?limit=6');
@@ -41,7 +54,24 @@ const AppProvider = ({ children }) => {
 
     /*   e.currentTarget.parentNode.children[1].innerText = piece; */
 
+    const findLoginUser = (uname) => {
 
+        const loginUser = userList.find(user => user.username === uname);
+        //console.log(loginUser);
+        if (loginUser.password === Number(password)) {
+            setOnlineUser(loginUser);
+            setOnline(true)
+            setActiveUsername('');
+            setPassword('');
+
+        } else {
+            setFail(true)
+            setActiveUsername('');
+            setPassword('');
+        }
+    }
+
+    console.log(onlineUser);
 
     const addBasket = (id) => {
         const basketItem = carts.find(c => c.id === id)
@@ -92,7 +122,8 @@ const AppProvider = ({ children }) => {
             setCarts, piece, setPiece, basket,
             setBasket, addBasket, basketItems,
             removeBasket, quantity, setQuantity,
-            totalPrice
+            totalPrice, findLoginUser, activeUsername, setActiveUsername, password, setPassword, fail,
+            online, onlineUser, setOnline
         }}>{children}</AppContext.Provider>
     )
 

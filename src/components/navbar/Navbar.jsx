@@ -3,13 +3,13 @@ import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import { Badge } from "@material-ui/core";
 import HowToRegIcon from '@mui/icons-material/HowToReg';
 import InputIcon from '@mui/icons-material/Input';
-/* import CategoryIcon from '@mui/icons-material/Category'; */
-import './navbar.css';
+import LogoutIcon from '@mui/icons-material/Logout';
+import './navbar.scss';
 import { Link } from "react-router-dom";
 import { useGlobalContext } from '../../contex'
 
 const Navbar = () => {
-    const { basket } = useGlobalContext()
+    const { basket, online, onlineUser, setOnline } = useGlobalContext()
     return (
         <div className="navbar">
             <div className="wrapper">
@@ -26,16 +26,29 @@ const Navbar = () => {
 
 
                     <div className="menuItem">
-                        <Link to="register">
-                            <h2>Register</h2>
-                        </Link>
-                        <HowToRegIcon />
+                        {online ? <h2 className="welcome">Welcomeback <span>{onlineUser.name}</span></h2> :
+                            <>
+                                <Link to="register">
+                                    <h2>Register</h2>
+                                </Link>
+                                <HowToRegIcon />
+                            </>
+                        }
+
                     </div>
                     <div className="menuItem">
-                        <Link to="/login" >
-                            <h2>sign in</h2>
-                        </Link>
-                        <InputIcon />
+                        {online ? <>
+                            <Link to="/login" >
+                                <h2 onClick={() => setOnline(false)}>Log out</h2>
+                            </Link>
+                            <LogoutIcon /></> :
+                            <>
+                                <Link to="/login" >
+                                    <h2>sign in</h2>
+                                </Link>
+                                <InputIcon />
+                            </>
+                        }
                     </div>
                     <div className="menuItem">
                         <Badge badgeContent={basket} color="primary">

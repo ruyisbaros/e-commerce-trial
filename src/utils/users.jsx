@@ -23,7 +23,7 @@ export const userList = [
     {
         name: 'Baran',
         lname: 'Erdonmez',
-        username: 'ahmet',
+        username: 'baran',
         email: 'a@a.com',
         password: 4444,
     },
