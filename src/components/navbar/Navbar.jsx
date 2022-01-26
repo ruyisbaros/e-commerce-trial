@@ -31,7 +31,7 @@ const Navbar = () => {
                                 <Link to="register">
                                     <h2>Register</h2>
                                 </Link>
-                                <HowToRegIcon />
+                                <HowToRegIcon style={{ color: 'blue' }} />
                             </>
                         }
 
@@ -41,19 +41,19 @@ const Navbar = () => {
                             <Link to="/login" >
                                 <h2 onClick={() => setOnline(false)}>Log out</h2>
                             </Link>
-                            <LogoutIcon /></> :
+                            <LogoutIcon style={{ color: 'red' }} /></> :
                             <>
                                 <Link to="/login" >
                                     <h2>sign in</h2>
                                 </Link>
-                                <InputIcon />
+                                <InputIcon style={{ color: 'blue' }} />
                             </>
                         }
                     </div>
                     <div className="menuItem">
                         <Badge badgeContent={basket} color="primary">
                             <Link to="/basket">
-                                <ShoppingCartOutlined />
+                                <ShoppingCartOutlined style={{ color: 'blue', fontSize: '30px' }} />
                             </Link>
                         </Badge>
                     </div>

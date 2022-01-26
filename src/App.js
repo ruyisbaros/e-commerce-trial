@@ -7,11 +7,12 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Products from './pages/products/Products.jsx';
 import Basket from './pages/basket/Basket.jsx'
+import { useNavigate } from 'react-router-dom'
 
 
 
 function App() {
-
+  const navigation = useNavigate()
   return (
     <>
 

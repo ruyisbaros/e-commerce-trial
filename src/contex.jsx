@@ -26,6 +26,7 @@ const AppProvider = ({ children }) => {
     const [onlineUser, setOnlineUser] = useState('');
     const [fail, setFail] = useState(false);
 
+
     const fetchData = async () => {
         const result = await fetch('https://fakestoreapi.com/products?limit=6');
         const data = await result.json();
@@ -61,6 +62,7 @@ const AppProvider = ({ children }) => {
         if (loginUser.password === Number(password)) {
             setOnlineUser(loginUser);
             setOnline(true)
+
             setActiveUsername('');
             setPassword('');
 
@@ -69,6 +71,7 @@ const AppProvider = ({ children }) => {
             setActiveUsername('');
             setPassword('');
         }
+
     }
 
     console.log(onlineUser);
