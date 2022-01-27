@@ -1,0 +1,83 @@
+.buy{
+width: 90vw;
+height: 60vh;
+margin: 30px auto;
+display: flex;
+align-items: start;
+justify-content: space-between;
+
+    input{
+        outline: none;
+        cursor: pointer;
+    }
+    .buy-left {
+        flex:4;
+
+        h1{
+            margin-bottom: 30px;
+        }
+        p{
+            margin-bottom: 5px;
+        }
+        input{
+            margin-bottom: 30px;
+            padding:5px 0;
+        }
+        .credit{
+            width: 70%;
+            border: 1px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            padding:7px 3px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .card-info {
+            margin-bottom: 30px;
+             width: 70%;
+            border: 1px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            padding:7px 3px;
+
+            input{
+                display: block;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    .buy-right {
+        flex:2;
+        width: 40%;
+        height: 30vh;
+        padding: 20px;
+         border: 1px solid rgba(0,0,0,0.2);
+        border-radius: 4px;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+
+        h2{
+            margin-bottom: 30px;
+        }
+        p,h3{
+            width: 70%;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        button{
+            display: block;
+            width: 40%;
+            margin:auto; 
+            margin-top: 40px;
+            padding:10px 15px;
+            background-color:purple;
+            border-radius:5px;
+            border:none;
+            color:white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}

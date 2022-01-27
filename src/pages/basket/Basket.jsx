@@ -1,8 +1,9 @@
 import './basket.scss';
 import { useGlobalContext } from '../../contex'
+import { Link } from 'react-router-dom';
 
 const Basket = () => {
-    const { basketItems, removeBasket, quantity, setQuantity, totalPrice } = useGlobalContext()
+    const { basketItems, removeBasket, quantity, setQuantity, totalPrice, buySingleItem, buyTotal } = useGlobalContext()
 
     if (basketItems.length === 0) {
         return (
@@ -52,7 +53,9 @@ const Basket = () => {
                                 <span>Available: {count}</span>
                             </div>
                             <div className="buttons">
-                                <button className="buy">Buy</button>
+
+                                <button onClick={() => buySingleItem(id)} className="buy"><Link to="/buy">Buy </Link></button>
+
                                 <button onClick={() => removeBasket(id)} className="remove">Remove</button>
                             </div>
                             <h1>{price} <span>€</span></h1>
@@ -70,7 +73,11 @@ const Basket = () => {
                     <p>-------------------------</p>
                     <h4>Total: {totalPrice.toFixed(2)} €</h4>
                 </div>
-                <button className="confirm">Confirm</button>
+                <button onClick={() => buyTotal(totalPrice.toFixed(2))} className="confirm">
+                    <Link to="/buy">
+                        Confirm
+                    </Link>
+                </button>
             </div>
 
         </div>

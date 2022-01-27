@@ -16,8 +16,10 @@ const Login = () => {
                     <input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     {fail && <h3>Wrong info has been typed</h3>}
                     <button onClick={() => findLoginUser(activeUsername)}>
-                        {!fail ? <Link to="/">LOGIN</Link> : <Link to="/login">LOGIN</Link>}
+                        {!fail ? <Link to="/login">LOGIN</Link> : <Link to="/">LOGIN</Link>}
                     </button>
+
+                    {/*  */}
 
                     <a href="/register">DID YOU FORGET THE PASSWORD?</a>
                     <a href="/register">CREATE A NEW ACCOUNT</a>

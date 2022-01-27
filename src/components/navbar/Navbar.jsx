@@ -26,7 +26,7 @@ const Navbar = () => {
 
 
                     <div className="menuItem">
-                        {online ? <h2 className="welcome">Welcomeback <span>{onlineUser.name}</span></h2> :
+                        {online ? <h2 className="welcome">Welcomeback <span>{onlineUser.fname}</span></h2> :
                             <>
                                 <Link to="register">
                                     <h2>Register</h2>

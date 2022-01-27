@@ -1,31 +1,31 @@
 export const userList = [
     {
-        name: 'Ahmet',
+        fname: 'Ahmet',
         lname: 'Erdonmez',
         username: 'ahmet',
         email: 'a@a.com',
-        password: 1111,
+        password: '1111',
     },
     {
-        name: 'Hulya',
+        fname: 'Hulya',
         lname: 'Erdonmez',
         username: 'hulya',
         email: 'a@a.com',
-        password: 2222,
+        password: '2222',
     },
     {
-        name: 'Ruya',
+        fname: 'Ruya',
         lname: 'Erdonmez',
         username: 'ruya',
         email: 'a@a.com',
-        password: 3333,
+        password: '3333',
     },
     {
-        name: 'Baran',
+        fname: 'Baran',
         lname: 'Erdonmez',
         username: 'baran',
         email: 'a@a.com',
-        password: 4444,
+        password: '4444',
     },
 
 ]

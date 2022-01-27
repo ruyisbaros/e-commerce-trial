@@ -25,7 +25,19 @@ const AppProvider = ({ children }) => {
     const [password, setPassword] = useState('');
     const [onlineUser, setOnlineUser] = useState('');
     const [fail, setFail] = useState(false);
+    const [allUsers, setAllUsers] = useState(userList);
+    const [newUser, setNewUser] = useState({
+        fname: '',
+        lname: '',
+        username: '',
+        email: '',
+        password: ''
+    });
 
+    const [buyPrice, setBuyPrice] = useState(0);
+    const [totalActive, setTotalActive] = useState(false)
+
+    console.log(allUsers);
 
     const fetchData = async () => {
         const result = await fetch('https://fakestoreapi.com/products?limit=6');
@@ -33,48 +45,59 @@ const AppProvider = ({ children }) => {
         console.log(data);
         setCarts(data)
     };
-    /*  const fetchData = () => {
-         fetch("https://fashion4.p.rapidapi.com/v1/results", {
-             "method": "POST",
-             "headers": {
-                 "content-type": "application/x-www-form-urlencoded",
-                 "x-rapidapi-key": "f972e385b7msh6e7210eb7ee17b9p116fd0jsnfa070c37faab",
-                 "x-rapidapi-host": "fashion4.p.rapidapi.com"
-             },
-             "body": {
-                 "url": "https://storage.googleapis.com/api4ai-static/samples/fashion-1.jpg"
-             }
-         })
-             .then(response => {
-                 console.log(response);
-             })
-             .catch(err => {
-                 console.error(err);
-             });
-     } */
 
-    /*   e.currentTarget.parentNode.children[1].innerText = piece; */
+    const createNewUser = (e) => {
+        e.preventDefault();
+        let name = e.target.name;
+        let value = e.target.value;
+        setNewUser({ ...newUser, [name]: value });
+        value = ''
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setAllUsers([...allUsers, newUser])
+
+    }
 
     const findLoginUser = (uname) => {
 
-        const loginUser = userList.find(user => user.username === uname);
-        //console.log(loginUser);
-        if (loginUser.password === Number(password)) {
-            setOnlineUser(loginUser);
-            setOnline(true)
+        const loginUser = allUsers.find(user => user.username === uname);
+        console.log(loginUser);
+        console.log(fail);
+        if (loginUser) {
+            setFail(false);
 
-            setActiveUsername('');
-            setPassword('');
+            if (loginUser.password === password) {
+                setOnlineUser(loginUser);
+                setOnline(true)
+                setFail(false);
+                setActiveUsername('');
+                setPassword('');
 
+            } else {
+                setFail(true)
+                setActiveUsername('');
+                setPassword('');
+            }
         } else {
             setFail(true)
             setActiveUsername('');
             setPassword('');
         }
-
     }
 
     console.log(onlineUser);
+
+    const buySingleItem = (id) => {
+        const buyItem = carts.find(c => c.id === id);
+        setBuyPrice(buyItem.price)
+    }
+
+    const buyTotal = (ttal) => {
+        setBuyPrice(ttal)
+    }
+
 
     const addBasket = (id) => {
         const basketItem = carts.find(c => c.id === id)
@@ -126,7 +149,7 @@ const AppProvider = ({ children }) => {
             setBasket, addBasket, basketItems,
             removeBasket, quantity, setQuantity,
             totalPrice, findLoginUser, activeUsername, setActiveUsername, password, setPassword, fail,
-            online, onlineUser, setOnline
+            online, onlineUser, setOnline, createNewUser, newUser, handleSubmit, buySingleItem, buyPrice, buyTotal
         }}>{children}</AppContext.Provider>
     )
 

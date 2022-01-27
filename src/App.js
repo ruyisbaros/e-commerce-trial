@@ -8,6 +8,7 @@ import Home from './pages/home/Home';
 import Products from './pages/products/Products.jsx';
 import Basket from './pages/basket/Basket.jsx'
 import { useNavigate } from 'react-router-dom'
+import Buy from './pages/buy/Buy';
 
 
 
@@ -23,6 +24,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<Products />} />
         <Route path="/basket" element={<Basket />} />
+        <Route path="/buy" element={<Buy />} />
+
       </Routes>
       <Footer />
     </>
